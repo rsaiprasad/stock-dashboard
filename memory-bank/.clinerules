@@ -1,0 +1,52 @@
+# Stock Dashboard Project Rules
+
+## Project Structure
+- Backend: NestJS with TypeScript
+- Frontend: React with TypeScript
+- Database: MySQL with TypeORM
+
+## Code Style
+- Use TypeScript strict mode
+- Follow NestJS best practices for module organization
+- Use async/await for asynchronous operations
+- Implement proper error handling
+
+## Data Management
+- Use TypeORM repositories for database operations
+- Implement data sync as scheduled tasks
+- Cache frequently accessed data
+- Use DTOs for data transfer between layers
+
+## API Integration
+- Use Alpaca TypeScript SDK for API calls
+- Implement retry logic for API failures
+- Store API credentials securely
+- Track API rate limits
+
+## Development Workflow
+- Implement features in small, testable increments
+- Follow the phase-based approach outlined in projectbrief.md
+- Update memory bank files when making significant changes
+- Document any deviations from the original plan
+
+## Database Patterns
+- Use single table design for stock data with appropriate indexes
+- Store timeframe as enum
+- Use composite indexes for common query patterns
+- Track data sync metadata in separate table
+
+## Frontend Patterns
+- Use React hooks for state management
+- Implement responsive design
+- Use TypeScript interfaces for API responses
+- Implement error boundaries for component failures
+- Use shadcn/ui components as base
+- Follow Tailwind CSS class ordering
+- Implement dark mode support
+- Use CSS variables for theming
+
+## Build Patterns
+- Use Rspack for production builds
+- Enable code splitting
+- Optimize asset loading
+- Implement proper tree shaking
