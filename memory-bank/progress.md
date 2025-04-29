@@ -7,12 +7,14 @@
 - Memory bank creation
 
 ## In Progress
-- Project setup preparation
-- Development environment configuration
+- Development environment configuration (VSCode Dev Containers setup, initial frontend setup with TypeScript, Rspack, Tailwind CSS, shadcn/ui dependencies, testing libraries)
+- Verifying Devcontainer build
 
 ## Pending
 ### Phase 1: Infrastructure
-- Project initialization
+- Resolve Devcontainer build issues
+- Integrate shadcn Alert component
+- Project initialization (backend)
 - Database setup
 - API integration
 
@@ -32,4 +34,5 @@
 - Real-time updates
 
 ## Known Issues
-None at this stage - project initialization pending
+- Devcontainer build currently failing (frontend package files added, but further build issues may exist).
+- TypeScript errors in VS Code (expected to resolve after successful devcontainer build).

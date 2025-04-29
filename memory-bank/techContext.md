@@ -133,13 +133,13 @@ export class DataSyncService {
 
 ## Frontend Architecture
 1. Build System
-   - Rspack for faster builds
-   - TypeScript configuration
+   - Rspack for faster builds (configured via `rspack.config.js`)
+   - TypeScript configuration (configured via `tsconfig.json` with path aliases)
    - Path aliases
 
 2. UI Components
-   - shadcn/ui component system
-   - Tailwind CSS for styling
+   - shadcn/ui component system (dependencies added, basic Alert component file created)
+   - Tailwind CSS for styling (configured via `tailwind.config.js` and `postcss.config.js`, directives added to `src/index.css`)
    - Radix UI primitives (via shadcn)
 
 3. Key Features
@@ -153,5 +153,11 @@ export class DataSyncService {
 2. MySQL database
 3. TypeORM CLI
 4. Alpaca API credentials
-5. Tailwind CSS setup
-6. Rspack configuration
+5. Frontend build tooling (Rspack, Tailwind CSS configured)
+6. Testing libraries added (Jest, React Testing Library)
+7. VSCode Dev Containers for consistent development environment
+
+## Docker Setup
+- Docker Compose for orchestrating backend, frontend, and database services.
+- Separate Dockerfiles for backend and frontend services.
+- MySQL service using an official MySQL image.

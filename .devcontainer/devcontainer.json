@@ -1,0 +1,35 @@
+{
+  "name": "Stock Dashboard Development",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "frontend",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stop",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "docker.docker",
+        "esbenp.prettier-vscode",
+        "github.codespaces",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.remotehub",
+        "inferrinizzard.prettier-sql-vscode",
+        "ms-azuretools.vscode-docker",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter-keymap",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-wsl",
+        "ms-vscode.azure-repos",
+        "ms-vscode.remote-repositories",
+        "ms-vscode.vscode-typescript-next",
+        "rolandgreim.sharecode",
+        "rvest.vs-code-prettier-eslint",
+        "saoudrizwan.claude-dev"
+      ]
+    }
+  },
+  "remoteUser": "node"
+}

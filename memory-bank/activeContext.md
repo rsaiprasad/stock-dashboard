@@ -1,22 +1,13 @@
 # Active Context
 
 ## Current Focus
-Phase 1: Infrastructure Setup with NestJS
+Verifying Devcontainer build and integrating shadcn Alert component
 
 ## Immediate Tasks
-1. NestJS project scaffolding
-2. Module structure setup
-   - AppModule
-   - StockModule
-   - OptionModule
-   - FilterModule
-   - DataSyncModule
-3. Database configuration with TypeORM
-4. Alpaca API integration service
-5. React frontend setup with:
-   - Rspack configuration
-   - shadcn/ui and Tailwind CSS
-   - TypeScript configuration
+1. Verify Devcontainer spins up successfully with updated frontend files and configuration.
+2. Integrate shadcn Alert component into the frontend "hello world" app.
+3. Address any remaining TypeScript or build configuration issues.
+4. Continue with backend infrastructure setup (NestJS initialization, TypeORM config).
 
 ## Recent Decisions
 1. Single table design for stock data
