@@ -1,0 +1,32 @@
+{
+  "name": "stock-dashboard-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^0.5.0",
+    "@rspack/core": "^0.5.0",
+    "@rspack/plugin-react-refresh": "^0.5.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.0",
+    "tailwindcss": "^3.0.0",
+    "postcss": "^8.0.0",
+    "autoprefixer": "^10.0.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "@radix-ui/react-slot": "^1.0.0",
+    "tailwind-merge": "^2.0.0",
+    "jest": "^29.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "react-refresh": "^0.14.0"
+  },
+  "scripts": {
+    "start": "rspack serve",
+    "build": "rspack build"
+  }
+}
