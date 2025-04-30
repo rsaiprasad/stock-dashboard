@@ -1,6 +1,9 @@
 {
   "name": "Stock Dashboard Development",
   "dockerComposeFile": "../docker-compose.yml",
+  "containerEngine": {
+    "type": "finch"
+  },
   "service": "frontend",
   "workspaceFolder": "/app",
   "shutdownAction": "stop",
