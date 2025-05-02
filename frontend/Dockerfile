@@ -4,20 +4,20 @@ FROM node:20
 # Set the working directory in the container
 WORKDIR /app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json and package-lock.json are copied
+# Install curl for healthcheck
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Copy package files
 COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
 # Copy app source code
 COPY . .
 
-# Re-run npm install after copying all files to ensure all dependencies are available
-RUN npm install
-
 # Expose the port the app runs on
 EXPOSE 3001
 
-# Command to run the application (assuming a start script in package.json)
-CMD sh -c "npm start & wait"
+# Command to run the application
+CMD ["npm", "start", "--", "--host", "0.0.0.0"]
