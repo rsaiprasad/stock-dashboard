@@ -20,4 +20,5 @@ COPY . .
 EXPOSE 3001
 
 # Command to run the application
-CMD ["npm", "start", "--", "--host", "0.0.0.0"]
+# Fix: Remove the --host argument that rspack doesn't support
+CMD ["npm", "start"]
