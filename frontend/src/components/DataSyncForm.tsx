@@ -29,7 +29,7 @@ interface OptionSyncData {
 const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
   const [dataType, setDataType] = useState<'stock' | 'options'>('stock');
   const [symbol, setSymbol] = useState('');
-  const [timeframe, setTimeframe] = useState<TimeframeEnum>(TimeframeEnum['1Day']);
+  const [timeframe, setTimeframe] = useState<TimeframeEnum>(TimeframeEnum["1Day"]);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [expirationDate, setExpirationDate] = useState('');

@@ -2,6 +2,7 @@ const { defineConfig } = require('@rspack/cli');
 const ReactRefreshPlugin = require('@rspack/plugin-react-refresh');
 const path = require('path');
 const HtmlRspackPlugin = require('@rspack/core').HtmlRspackPlugin;
+const { DefinePlugin } = require('@rspack/core');
 
 module.exports = defineConfig({
   mode: 'development',
@@ -69,6 +70,10 @@ module.exports = defineConfig({
     new HtmlRspackPlugin({
       template: './public/index.html',
       inject: true
+    }),
+    new DefinePlugin({
+      'process.env.API_URL': JSON.stringify('http://localhost:3000'),
+      'process.env.NODE_ENV': JSON.stringify('development')
     })
   ],
   devServer: {
