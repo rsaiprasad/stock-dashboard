@@ -1,4 +1,5 @@
 import React from 'react';
+
 import DataSyncPage from './pages/DataSync';
 import './index.css';
 

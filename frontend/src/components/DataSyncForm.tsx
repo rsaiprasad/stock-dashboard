@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+
 import { TimeframeEnum } from '../types/stock';
+
+import { Input } from './ui/input';
+import { Select } from './ui/select';
 
 interface DataSyncFormProps {
   onSubmit: (data: StockSyncData | OptionSyncData) => void;
@@ -29,7 +33,7 @@ interface OptionSyncData {
 const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
   const [dataType, setDataType] = useState<'stock' | 'options'>('stock');
   const [symbol, setSymbol] = useState('');
-  const [timeframe, setTimeframe] = useState<TimeframeEnum>(TimeframeEnum["1Day"]);
+  const [timeframe, setTimeframe] = useState<TimeframeEnum>(TimeframeEnum['1Day']);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [expirationDate, setExpirationDate] = useState('');
@@ -101,12 +105,11 @@ const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
           >
             Symbol
           </label>
-          <input
+          <Input
             type="text"
             id="symbol"
             value={symbol}
             onChange={(e) => setSymbol(e.target.value.toUpperCase())}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             placeholder="AAPL"
             required
           />
@@ -121,11 +124,10 @@ const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
               >
                 Timeframe
               </label>
-              <select
+              <Select
                 id="timeframe"
                 value={timeframe}
                 onChange={(e) => setTimeframe(e.target.value as TimeframeEnum)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 required
               >
                 <option value={TimeframeEnum['1Min']}>1 Minute</option>
@@ -133,7 +135,7 @@ const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
                 <option value={TimeframeEnum['15Min']}>15 Minutes</option>
                 <option value={TimeframeEnum['1Hour']}>1 Hour</option>
                 <option value={TimeframeEnum['1Day']}>1 Day</option>
-              </select>
+              </Select>
             </div>
 
             <div className="mb-4">
@@ -143,12 +145,11 @@ const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
               >
                 Start Date
               </label>
-              <input
+              <Input
                 type="date"
                 id="startDate"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 required
               />
             </div>
@@ -160,12 +161,11 @@ const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
               >
                 End Date (Optional)
               </label>
-              <input
+              <Input
                 type="date"
                 id="endDate"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
           </>
@@ -178,12 +178,11 @@ const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
               >
                 Expiration Date (Optional)
               </label>
-              <input
+              <Input
                 type="date"
                 id="expirationDate"
                 value={expirationDate}
                 onChange={(e) => setExpirationDate(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -194,12 +193,11 @@ const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
               >
                 Strike Price (Optional)
               </label>
-              <input
+              <Input
                 type="number"
                 id="strikePrice"
                 value={strikePrice}
                 onChange={(e) => setStrikePrice(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 placeholder="150.00"
                 step="0.01"
               />
@@ -212,16 +210,15 @@ const DataSyncForm: React.FC<DataSyncFormProps> = ({ onSubmit, isLoading }) => {
               >
                 Option Type (Optional)
               </label>
-              <select
+              <Select
                 id="optionType"
                 value={optionType}
                 onChange={(e) => setOptionType(e.target.value as 'call' | 'put' | '')}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">Select Option Type</option>
                 <option value="call">Call</option>
                 <option value="put">Put</option>
-              </select>
+              </Select>
             </div>
           </>
         )}
