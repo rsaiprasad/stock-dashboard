@@ -1,12 +1,12 @@
 {
   "name": "Stock Dashboard Development",
-  "dockerComposeFile": "../docker-compose.yml",
+  "dockerComposeFile": "../docker-compose.dev.yml",
   "containerEngine": {
     "type": "finch"
   },
-  "service": "frontend",
+  "service": "devcontainer",
   "workspaceFolder": "/app",
-  "shutdownAction": "stop",
+  "shutdownAction": "stopCompose",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -34,5 +34,13 @@
       ]
     }
   },
-  "remoteUser": "node"
+  "postCreateCommand": "echo 'Development container is ready!'",
+  "remoteUser": "root",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+  ],
+  "build": {
+    "dockerfile": "Dockerfile.dev",
+    "context": "."
+  }
 }

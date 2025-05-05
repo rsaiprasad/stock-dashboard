@@ -1,0 +1,55 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: stock_dashboard
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  devcontainer:
+    build:
+      context: ./.devcontainer
+      dockerfile: Dockerfile.dev
+    container_name: stk_devcontainer
+    volumes:
+      - type: bind
+        source: ${PWD}
+        target: /app
+      - frontend_node_modules:/app/frontend/node_modules
+      - backend_node_modules:/app/backend/node_modules
+    ports:
+      - "3000:3000"  # Backend port
+      - "3001:3001"  # Frontend port
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_USERNAME: user
+      DATABASE_PASSWORD: password
+      DATABASE_NAME: stock_dashboard
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+    command: sleep infinity
+
+volumes:
+  mysql_data:
+  frontend_node_modules:
+  backend_node_modules:
+
+networks:
+  app-network:
+    driver: bridge
