@@ -1,15 +1,16 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import Alpaca from '@alpacahq/alpaca-trade-api';
+// Use CommonJS require instead of ES imports
+const AlpacaApi = require('@alpacahq/alpaca-trade-api');
 
 @Injectable()
 export class AlpacaService {
-  private readonly alpaca: Alpaca;
+  private readonly alpaca: any;
   private readonly logger = new Logger(AlpacaService.name);
 
   constructor(private configService: ConfigService) {
     // Initialize Alpaca client
-    this.alpaca = new Alpaca({
+    this.alpaca = new AlpacaApi({
       keyId: this.configService.get<string>('ALPACA_API_KEY', ''),
       secretKey: this.configService.get<string>('ALPACA_API_SECRET', ''),
       paper: true, // Set to false for live trading
